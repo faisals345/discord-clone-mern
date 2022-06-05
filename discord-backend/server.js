@@ -21,4 +21,18 @@ app.get("/", (req, res) => {
     });
   });
 
-server.listen(PORT,()=>console.log( `Server is listening on ${PORT}`));
+// server.listen(PORT,()=>console.log( `Server is listening on ${PORT}`));
+
+// console.log(process.env.MONGO_URI);
+mongoose
+  .connect(
+    process.env.MONGO_URI
+  )
+  .then(() => {
+    app.listen(PORT);
+    console.log("success");
+   
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
