@@ -2,7 +2,7 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  baseURL: "https://discord-clone-mern-faisal.herokuapp.com/",
+  baseURL: "https://discord-clone-mern-faisal.herokuapp.com/api/",
   timeout: 1000,
 });
 
